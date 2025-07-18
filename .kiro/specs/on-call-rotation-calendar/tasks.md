@@ -11,14 +11,14 @@
   - Configure development environment with hot reloading
   - _Requirements: All_
 
-- [ ] 1.2 Implement core data models and database schema
+- [x] 1.2 Implement core data models and database schema
   - Create database schema for all entities (User, Collaborator, Availability, etc.)
   - Implement data models with validation
   - Create database migration scripts
   - Write unit tests for data models
   - _Requirements: All_
 
-- [ ] 1.3 Set up authentication and authorization system
+- [x] 1.3 Set up authentication and authorization system
   - Implement user authentication with secure password handling
   - Create role-based authorization system (Admin, Manager, Collaborator)
   - Write unit tests for authentication and authorization
