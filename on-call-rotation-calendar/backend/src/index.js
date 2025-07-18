@@ -3,12 +3,21 @@ const cors = require('cors');
 const morgan = require('morgan');
 const dotenv = require('dotenv');
 const connectDB = require('./config/database');
+const { initializeDatabase } = require('./utils/dbMigration');
 
 // Load environment variables
 dotenv.config();
 
 // Connect to MongoDB
-connectDB();
+connectDB()
+  .then(() => {
+    // Initialize database with default data
+    return initializeDatabase();
+  })
+  .catch(err => {
+    console.error('Failed to initialize database:', err);
+    process.exit(1);
+  });
 
 // Create Express app
 const app = express();
@@ -23,8 +32,9 @@ app.get('/', (req, res) => {
   res.json({ message: 'Welcome to On-Call Rotation Calendar API' });
 });
 
-// API routes will be added here
-// app.use('/api/users', require('./routes/userRoutes'));
+// API routes
+app.use('/api/auth', require('./routes/authRoutes'));
+app.use('/api/users', require('./routes/userRoutes'));
 // app.use('/api/collaborators', require('./routes/collaboratorRoutes'));
 // app.use('/api/schedules', require('./routes/scheduleRoutes'));
 
