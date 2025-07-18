@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "name": "Task Completion Auto-Commit",
+  "description": "Automatically creates a commit when a task is marked as completed, including a summary of changes",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "*"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Please review the recent changes and create a commit with a summary of what was done. If a task was completed, include that information in the commit message. Format the commit message with a clear title and detailed description of the changes."
+  }
+}

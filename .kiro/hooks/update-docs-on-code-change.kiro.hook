@@ -1,0 +1,36 @@
+{
+  "enabled": true,
+  "name": "Update Documentation on Code Changes",
+  "description": "Monitors changes to source code files and prompts for documentation updates in README or docs folder",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "**/*.{js",
+      "ts",
+      "jsx",
+      "tsx",
+      "py",
+      "java",
+      "go",
+      "rb",
+      "php",
+      "c",
+      "cpp",
+      "h",
+      "hpp",
+      "cs",
+      "rs",
+      "swift",
+      "kt",
+      "scala",
+      "html",
+      "css",
+      "scss}"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "I noticed changes to source code files. Please review these changes and update the relevant documentation in either the README.md file or in the /docs directory if it exists. Consider:\n1. Do these code changes require documentation updates?\n2. Are there new features, APIs, or behavior changes that should be documented?\n3. Should examples or usage instructions be updated?\n4. Are there any deprecated features that should be marked in the docs?\n\nPlease make appropriate documentation changes to keep it in sync with the code."
+  }
+}

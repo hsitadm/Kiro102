@@ -1,0 +1,30 @@
+{
+  "enabled": true,
+  "name": "Pre-commit Security Review",
+  "description": "Reviews code changes before commits to ensure security best practices and prevent exposure of sensitive information like API keys",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "*.js",
+      "*.ts",
+      "*.py",
+      "*.java",
+      "*.php",
+      "*.rb",
+      "*.go",
+      "*.cs",
+      "*.html",
+      "*.css",
+      "*.json",
+      "*.yaml",
+      "*.yml",
+      "*.env*",
+      "*.config*"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Please review the following code changes for security issues:\n\n1. Check for exposed API keys, passwords, tokens, or credentials\n2. Identify hardcoded sensitive information\n3. Look for insecure cryptographic practices\n4. Check for potential SQL injection vulnerabilities\n5. Identify potential XSS vulnerabilities\n6. Review authentication and authorization mechanisms\n7. Check for insecure file operations\n8. Identify any other security best practices that should be applied\n\nIf you find any security issues, please explain:\n- What the issue is\n- Why it's a security concern\n- How to fix it properly\n\nIf the code looks secure, confirm that it follows security best practices."
+  }
+}
