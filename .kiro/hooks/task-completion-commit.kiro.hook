@@ -11,6 +11,6 @@
   },
   "then": {
     "type": "askAgent",
-    "prompt": "Please review the changes in the tasks.md file. If a task status has changed (especially if marked as completed or in-progress), create a commit that includes:\n1. A clear title mentioning the task number and name\n2. A detailed description of what was implemented or changed\n3. References to any related files that were modified as part of this task\n\nMake sure to add all relevant files to the commit that are related to the task completion."
+    "prompt": "Please review the changes in the tasks.md file. If a task status has changed (especially if marked as completed or in-progress), create a commit that includes:\n1. A clear title mentioning the task number and name\n2. A detailed description of what was implemented or changed\n3. References to any related files that were modified as part of this task\n\nMake sure to add all relevant files to the commit that are related to the task completion.\n\nAfter creating the commit, push the changes to the remote repository using 'git push origin main' to ensure all changes are synchronized with GitHub."
   }
 }
